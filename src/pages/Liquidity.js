@@ -11,9 +11,9 @@ export class Liquidity extends Component {
   async componentDidMount() {
     const { count, setData } = this.props;
 
-    const { data } = await getData(count);
+    const data = await getData(count);
 
-    setData(Object.values(data));
+    setData(data);
   }
 
   customFormatter(value, name, props) {

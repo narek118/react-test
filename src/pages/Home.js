@@ -16,18 +16,18 @@ export class Home extends Component {
   async componentDidMount() {
     const { count, setData } = this.props;
 
-    const { data } = await getData(count);
+    const data = await getData(count);
 
-    setData(Object.values(data));
+    setData(data);
   }
 
   async handleChange(e) {
     const { changeCount, setData } = this.props;
     const count = e.target.value;
 
-    const { data } = await getData(count);
+    const data = await getData(count);
 
-    setData(Object.values(data));
+    setData(data);
     changeCount(count);
   }
 
